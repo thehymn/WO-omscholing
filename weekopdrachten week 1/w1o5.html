@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>w1o5</title>
+</head>
+<body>
+    <input type="button" id="knopa" value="knopje A" onclick="knopklik(0)">
+    <input type="button" id="knopb" value="knopje B" onclick="knopklik(1)">
+    <input type="button" id="knopc" value="knopje C" onclick="knopklik(2)">
+    <input type="button" id="knopd" value="knopje D" onclick="knopklik(3)">
+    <div id="divbox1">
+        <p id="box1"></p>
+    </div>
+</body>
+<script>
+
+    var namen = ["knop A", "knop B", "knop C", "knop D"];
+    var klikteller = [0,0,0,0];
+
+    function knopklik(deknop){
+        klikteller[deknop]++;
+        console.log(klikteller);
+        console.log(namen);
+        var zin = "Je klikte op de knop "
+        var totaal = zin+deknop;
+        var appenddata = document.getElementById("box1");
+        var logdata = document.getElementById("divbox1").textContent;
+        var include = logdata.includes(totaal);
+        if(include == true){
+            alert("Je hebt al " + namen + " geklikt" );
+            appenddata.insertAdjacentHTML('afterend', '<p>' + totaal + '</p>')
+        }
+        else{
+            appenddata.insertAdjacentHTML('afterend', '<p>' + totaal + '</p>')
+        }
+    }
+</script>
+</html>  

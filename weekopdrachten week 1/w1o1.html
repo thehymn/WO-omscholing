@@ -1,0 +1,14 @@
+<input type="text" id="hallo">
+<input type="button" value="klik" onclick="groeten()">
+
+<script>
+    function groeten(){
+        var invoer = document.getElementById("hallo").value;
+        if("hallo" == invoer){
+            alert("Welkom");
+        }
+        else if("doei" == invoer){
+            alert("Tot de volgende keer");
+        }
+    }
+</script>

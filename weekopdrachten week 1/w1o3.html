@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>w1o3</title>
+</head>
+<body>
+    <input type="text" id="veld1">
+    <input type="text" id="veld2">
+    <input type="button" value="click" onclick="zoek()">
+    <div id="box">
+
+    </div>
+</body>
+<Script>
+    function zoek(){
+        var eersteveld = document.getElementById("veld1").value;
+        var telling = 0;
+        for(var x = 0; x  < eersteveld.length; x++){
+            if("e" == eersteveld[x]){
+                telling++;
+                document.getElementById("box").innerHTML = telling
+            }
+        }
+    }
+</Script>
+</html>
+ 

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>w1o2</title>
+</head>
+<body>
+    <input type="text" id="input1">
+    <input type="button" value="check" onclick=zoek()>
+    <div id="uitkomst"></div>
+</body>
+<script>
+    function zoek(){
+        var zoekdee = document.getElementById("input1").value;
+        for(var i = 0; i < zoekdee.length ; i++){
+            if( "e" == zoekdee[i] ){
+                console.log("er zit een e in");
+                document.getElementById("uitkomst").innerHTML = "er zit een e in";
+            }
+        }
+    }
+        //if (zoekdee.includes("e")){
+        //    alert("zit wel een E in")
+        //}
+        //else{
+        //    alert("zit geen E in")
+        //}
+</script>
+</html>
