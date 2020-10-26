@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>w1o6</title>
+    <style>
+        .wrapper{
+            text-align: center;
+        }
+        .divbox1{
+            background-size: cover;
+            background-image: url(fotow1o6/lente.jpg);
+            height: 110vh;
+            display: flex;
+            justify-content: center;
+            font-size: 50px;
+            color: lime;
+        }
+        #jaarveld{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <input type="button" value="seizoensknop" onclick="knopklik()">
+    </div>
+    <div id="jaarveld"></div>
+    <div id="bgc" class="divbox1">
+
+    </div>
+</body>
+<script>
+    var seizoenen = ['url(fotow1o6/lente.jpg)', 'url(fotow1o6/zomer.jpg)', 'url(fotow1o6/herfst.jpg)', 'url(fotow1o6/winter.jpg)'];
+    var maandteller = 0;
+    var klikteller = 0;
+    var jaarverder = 0;
+    var jaarteller = 0;
+
+    function knopklik(){
+        maandteller++;
+        klikteller++;
+        jaarteller++;
+        console.log(maandteller);
+        //console.log(klikteller);
+        document.getElementById('bgc').style.backgroundImage=seizoenen[klikteller];
+        if(klikteller == 3){
+            klikteller = -1
+        }
+        if(maandteller == 12){
+            document.getElementById("bgc").innerHTML = "Er is 3 jaar voorbij"
+        }
+        if(jaarteller == 4){
+            jaarverder++;
+            document.getElementById("jaarveld").innerHTML = jaarverder;
+            jaarteller = 0;
+        }
+    }
+</script>
+</html>  

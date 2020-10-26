@@ -26,10 +26,8 @@
         var zin = "Je klikte op de knop "
         var totaal = zin+namen[deknop];
         var appenddata = document.getElementById("box1");
-        var logdata = document.getElementById("divbox1").textContent;
-        var include = logdata.includes(totaal);
-        if(include == true){
-            alert("Je hebt " + namen[deknop] + " al " + klikteller[deknop] + " geklikt" );
+        if(klikteller[deknop] > 1){
+            alert("Je hebt " + namen[deknop] + " al " + klikteller[deknop] + " keer geklikt" );
             appenddata.insertAdjacentHTML('afterend', '<p>' + totaal + '</p>')
         }
         else{
