@@ -39,14 +39,14 @@
     var jaarteller = 0;
 
     function knopklik(){
-        maandteller++;
-        klikteller++;
-        jaarteller++;
         console.log(maandteller);
         //console.log(klikteller);
         document.getElementById('bgc').style.backgroundImage=seizoenen[klikteller];
-        if(klikteller == 3){
-            klikteller = -1
+        maandteller++;
+        klikteller++;
+        jaarteller++;
+        if(klikteller == 4){
+            klikteller = 0;
         }
         if(maandteller == 12){
             document.getElementById("bgc").innerHTML = "Er is 3 jaar voorbij"

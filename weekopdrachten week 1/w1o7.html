@@ -68,20 +68,20 @@
     var klikteller = [0,0];
 
     function seizoen1(klik1){
-        klikteller[klik1]++;
         //console.log(klikteller);
         document.getElementById("box1").style.backgroundImage=seizoenen[klikteller[klik1]];
-        if(klikteller[klik1] == 3){
-            klikteller[klik1] = -1;
+        klikteller[klik1]++;
+        if(klikteller[klik1] == 4){
+            klikteller[klik1] = 0;
         }
     }
 
     function seizoen2(klik2){
-        klikteller[klik2]++;
         //console.log(klikteller);
         document.getElementById("box2").style.backgroundImage=seizoenen[klikteller[klik2]];
-        if(klikteller[klik2] == 3){
-            klikteller[klik2] = -1;
+        klikteller[klik2]++;
+        if(klikteller[klik2] == 4){
+            klikteller[klik2] = 0;
         }
     }
 
