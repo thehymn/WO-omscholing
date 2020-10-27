@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>w1o8</title>
+    <style>
+        .boxwrap{
+            justify-content: center;
+            display: flex;
+            margin: 20px;
+        }
+        #box1{
+            height: 250px;
+            width: 250px;
+            background-image: ;
+            background-color: rgb(74, 18, 131);
+            background-size: cover;
+            margin: 20px;
+        }
+        #box2{
+            height: 250px;
+            width: 250px;
+            background-image: ;
+            background-color: rgb(74, 18, 131);
+            background-size: cover;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxwrap">
+        <div id="box1" onclick="AFBA()"></div>
+         <div id="box2"></div>
+     </div>
+</body>
+<script>
+    var seizoenen = ['url(fotow1o6/lente.jpg)', 'url(fotow1o6/zomer.jpg)', 'url(fotow1o6/herfst.jpg)', 'url(fotow1o6/winter.jpg)'];
+    var klikteller = 0;
+
+    function AFBA(){
+        document.getElementById("box1").style.backgroundImage = seizoenen[klikteller];
+        klikteller++;
+        console.log(klikteller);
+        if(klikteller == 4){
+            klikteller = 0;
+        }
+        if(klikteller == 1){
+            document.getElementById("box2").style.backgroundImage = 'url(fotow1o6/lammetje.jpg)';
+        }
+        else{
+            document.getElementById("box2").style.backgroundImage = 'url(fotow1o6/vraagteken.jpg';
+        }
+    }
+
+
+</script>
+</html>
