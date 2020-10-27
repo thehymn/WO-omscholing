@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>w1o7</title>
+    <style>
+        .boxwrap{
+            justify-content: center;
+            display: flex;
+            margin: 20px;
+        }
+        #box1{
+            height: 250px;
+            width: 250px;
+            background-image: url(fotow1o6/lente.jpg);
+            background-size: cover;
+            margin: 20px;
+        }
+        #box2{
+            height: 250px;
+            width: 250px;
+            background-image: url(fotow1o6/lente.jpg);
+            background-size: cover;
+            margin: 20px;
+        }
+        .knoppen{
+            display: flex;
+            justify-content: center;
+        }
+        #knop1{
+            margin: 0px 100px 0px 100px;
+        }
+        #knop2{
+            margin: 0px 100px 0px 100px;
+        }
+        .knopsub{
+            text-align: center;
+        }
+        #printid{
+            background-color: cornflowerblue;
+            margin: 20px;
+            width: auto;
+            height: auto;
+            font-size: 80px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxwrap">
+        <div id="box1"></div>
+        <div id="box2"></div>
+    </div>
+    <div class="knoppen">
+        <input type="button" id="knop1" value="knop links" onclick="seizoen1(0)">
+        <input type="button" id="knop2" value="knop rechts" onclick="seizoen2(1)">
+    </div>
+    <div class="knopsub">
+        <input type="button" value="vergelijk" onclick="vergelijk()">
+    </div>
+    <div id="printid">
+
+    </div>
+</body>
+<script>
+    var seizoenen = ['url(fotow1o6/lente.jpg)', 'url(fotow1o6/zomer.jpg)', 'url(fotow1o6/herfst.jpg)', 'url(fotow1o6/winter.jpg)'];
+    var klikteller = [0,0];
+
+    function seizoen1(klik1){
+        klikteller[klik1]++;
+        //console.log(klikteller);
+        document.getElementById("box1").style.backgroundImage=seizoenen[klikteller[klik1]];
+        if(klikteller[klik1] == 3){
+            klikteller[klik1] = -1;
+        }
+    }
+
+    function seizoen2(klik2){
+        klikteller[klik2]++;
+        //console.log(klikteller);
+        document.getElementById("box2").style.backgroundImage=seizoenen[klikteller[klik2]];
+        if(klikteller[klik2] == 3){
+            klikteller[klik2] = -1;
+        }
+    }
+
+    function vergelijk(){
+        if(klikteller[0] == klikteller[1]){
+            //console.log("Die zijn gelijk!");
+            document.getElementById("printid").style.backgroundColor="green"
+            document.getElementById("printid").innerHTML = "Die zijn gelijk!"
+        }
+        else{
+            //console.log("Die zijn NIET gelijk!");
+            document.getElementById("printid").style.backgroundColor="red"
+            document.getElementById("printid").innerHTML = "Die zijn NIET gelijk!"
+        }
+    }
+</script>
+</html>
