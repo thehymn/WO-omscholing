@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lingo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <span id="result"></span>
+    <input class="letteropmaak" id="letter0_0" readonly="true" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter0_1" onKeyup="autotab(this, document.getElementById('letter0_2'))" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter0_2" onKeyup="autotab(this, document.getElementById('letter0_3'))" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter0_3" onKeyup="autotab(this, document.getElementById('letter0_4'))" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter0_4" maxlength="1" type="text"><br>
+ 
+    <input class="letteropmaak" id="letter1_0" readonly="true" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter1_1" onKeyup="autotab(this, document.getElementById('letter1_2'))" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter1_2" onKeyup="autotab(this, document.getElementById('letter1_3'))" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter1_3" onKeyup="autotab(this, document.getElementById('letter1_4'))" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter1_4" maxlength="1" type="text"><br>
+
+    <input class="letteropmaak" id="letter2_0" readonly="true" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter2_1" onKeyup="autotab(this, document.getElementById('letter2_2'))" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter2_2" onKeyup="autotab(this, document.getElementById('letter2_3'))" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter2_3" onKeyup="autotab(this, document.getElementById('letter2_4'))" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter2_4" maxlength="1" type="text"><br>
+
+    <input class="letteropmaak" id="letter3_0" readonly="true" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter3_1" onKeyup="autotab(this, document.getElementById('letter3_2'))" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter3_2" onKeyup="autotab(this, document.getElementById('letter3_3'))" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter3_3" onKeyup="autotab(this, document.getElementById('letter3_4'))" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter3_4" maxlength="1" type="text"><br>
+
+    <input class="letteropmaak" id="letter4_0" readonly="true" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter4_1" onKeyup="autotab(this, document.getElementById('letter4_2'))" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter4_2" onKeyup="autotab(this, document.getElementById('letter4_3'))" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter4_3" onKeyup="autotab(this, document.getElementById('letter4_4'))" maxlength="1" type="text">
+    <input class="letteropmaak" id="letter4_4" maxlength="1" type="text"><br>
+
+    <button id="check" onclick="check()">Check</button>
+    <button id="opnieuw" onclick="reload()">Opnieuw spelen</button>
+</body>
+<script>
+
+    var woordlijst = ["hallo", "ollah", "fiets", "steif"];
+
+    function reload(){
+        var rand = woordlijst[Math.floor(Math.random() * woordlijst.length)];
+        var r1t1 = rand[0];
+        var r1t2 = rand[1];
+        var r1t3 = rand[2];
+        var r1t4 = rand[3];
+        var r1t5 = rand[4];
+        console.log(rand);
+        console.log (r1t1);
+        console.log (r1t2);
+        console.log (r1t3);
+        console.log (r1t4);
+        console.log (r1t5);
+    }
+
+    function autotab(current,to){
+    if (current.getAttribute && 
+      current.value.length==current.getAttribute("maxlength")) {
+        to.focus() 
+        }
+}
+</script>
+</html>
