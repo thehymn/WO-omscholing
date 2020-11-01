@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>w1o9</title>
+    <style>
+        .boxwrap{
+            justify-content: center;
+            display: flex;
+            margin: 20px;
+        }
+        #box1{
+            height: 250px;
+            width: 250px;
+            background-image: url(fotow1o6/lente.jpg);
+            background-size: cover;
+            margin: 20px;
+        }
+        #box2{
+            height: 250px;
+            width: 250px;
+            background-image: url(fotow1o6/lente.jpg);
+            background-size: cover;
+            margin: 20px;
+        }
+        #box3{
+            height: 250px;
+            width: 250px;
+            background-image: url(fotow1o6/lente.jpg);
+            background-size: cover;
+            margin: 20px;
+        }
+        #tekstveld{
+            text-align: center;
+            
+        }
+        #inputveld{
+            width: 17em;
+        }
+        .knopsub{
+            text-align: center;
+            margin-top: 5em;
+        }
+        #printid{
+            background-color: cornflowerblue;
+            margin: 20px;
+            width: auto;
+            height: auto;
+            font-size: 80px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxwrap">
+        <div id="box1" onclick="seizoen1(0)"></div>
+        <div id="box2" onclick="seizoen2(1)"></div>
+        <div id="box3" onclick="seizoen3(2)"></div>
+    </div>
+    <div id="tekstveld">
+        <input type="text" id="inputveld" placeholder="Typ hier lente, zomer, herfst of winter">
+    </div>
+    <div class="knopsub">
+        <input type="button" value="vergelijk" onclick="vergelijk()">
+    </div>
+    <div id="printid">
+
+    </div>
+</body>
+<script>
+    var seizoenen = ['url(fotow1o6/lente.jpg)', 'url(fotow1o6/zomer.jpg)', 'url(fotow1o6/herfst.jpg)', 'url(fotow1o6/winter.jpg)'];
+    var klikteller = [1,1,1];
+    var seizoentekst = ['winter','lente','zomer','herfst'];
+
+
+    function seizoen1(klik1){
+        document.getElementById("box1").style.backgroundImage=seizoenen[klikteller[klik1]];
+        klikteller[klik1]++;
+        console.log(klikteller);
+        if(klikteller[klik1] == 4){
+            klikteller[klik1] = 0;
+        }
+    }
+
+    function seizoen2(klik2){
+        document.getElementById("box2").style.backgroundImage=seizoenen[klikteller[klik2]];
+        klikteller[klik2]++;
+        if(klikteller[klik2] == 4){
+            klikteller[klik2] = 0;
+        }
+    }
+
+    function seizoen3(klik3){
+        document.getElementById("box3").style.backgroundImage=seizoenen[klikteller[klik3]];
+        klikteller[klik3]++;
+        if(klikteller[klik3] == 4){
+            klikteller[klik3] = 0;
+        }
+    }
+
+    function vergelijk(){
+        var hetveld = document.getElementById("inputveld").value;
+        if(klikteller[0] == klikteller[1] && klikteller[1] == klikteller[2] && hetveld == seizoentekst[klikteller[0]]){
+            //console.log("Die zijn gelijk!");
+            document.getElementById("printid").style.backgroundColor="green";
+            document.getElementById("printid").innerHTML = "Die zijn gelijk!";
+        }
+        else{
+            //console.log("Die zijn NIET gelijk!");
+            document.getElementById("printid").style.backgroundColor="red";
+            document.getElementById("printid").innerHTML = "Die zijn NIET gelijk!";
+        }
+    }
+</script>
+</html>

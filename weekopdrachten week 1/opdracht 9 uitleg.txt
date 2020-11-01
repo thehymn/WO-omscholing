@@ -1,0 +1,7 @@
+Maak 3 afbeeldingen. Afbeelding A, Afbeelding B en Afbeelding C.
+wanneer je op Afbeelding A B of C klikt wissel je door de seizoenen (lente, zomer, herfst, winter) heen.
+Elke afbeelding moet door de seizoenen kunnen circuleren.
+Maak 1 tekstvak. Hierin moet je de naam van het seizoen typen (lente, zomer, herfst, winter) overeen komende met de afbeelding.
+
+Wanneer ALLE 3 de seizoenen overeenkomen met het getypte woord verschijnt er in een div met groene achtergrond: "Die zijn gelijk!"
+Wanneer er een afbeelding niet overeenkomt met de andere afbeeldingen of met het getypte woord verschijnt er in een div met rode achtergrond: "Die zijn NIET gelijk"
